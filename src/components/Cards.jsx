@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { colors, badgeColors } from "./helpers/colors";
 import axios from "axios";
+import InfoCard from "./InfoCard";
 
 function Cards({ search }) {
   const [pokeData, setPokeData] = useState([]);
+  const [showInfoCard, setShowInfoCard] = useState(false);
+  const [selectedPokemon, setSelectedPokemon] = useState(null);
 
   console.log(search);
 
   useEffect(() => {
     axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=1000")
+      .get("https://pokeapi.co/api/v2/pokemon?limit=1008")
       .then(function (response) {
         // handle success
         const pokemon = response.data.results;
@@ -29,11 +32,22 @@ function Cards({ search }) {
       });
   }, []);
 
+  const handleCardClick = (pokemon) => {
+    setSelectedPokemon(pokemon);
+    setShowInfoCard(true);
+  };
+
+  console.log(pokeData);
+
   return (
     <div className="flex flex-row flex-wrap p-20">
       {pokeData.map((pokemon) =>
         pokemon.name.toLowerCase().includes(search) ? (
-          <div key={pokemon.id} className="py-5 m-auto w-[25em] h-[14em]">
+          <div
+            key={pokemon.id}
+            className="py-5 m-auto w-[25em] h-[14em] hover:scale-105 cursor-pointer"
+            onClick={() => handleCardClick(pokemon)}
+          >
             <div
               className="rounded-3xl shadow p-10 flex flex-row h-full bg-[url('https://github.com/Brad-Williams-Dev/pokedex/blob/main/src/components/images/pokeball.png?raw=true')] bg-contain bg-no-repeat bg-right"
               style={{
@@ -84,6 +98,9 @@ function Cards({ search }) {
         ) : (
           <p></p>
         )
+      )}
+      {showInfoCard && (
+        <InfoCard pokemon={selectedPokemon} setShow={setShowInfoCard} />
       )}
     </div>
   );
