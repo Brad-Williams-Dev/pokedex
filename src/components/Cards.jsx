@@ -43,13 +43,11 @@ function Cards({ search }) {
   function LoadingBar() {
     return (
       <div className="w-full h-full flex justify-center">
-        <div className="loader">
-          <img
-            src="images/pokeball-load.png"
-            alt="pokeball"
-            className="h-[25em] animate-spin"
-          />
-        </div>
+        <img
+          src="https://github.com/Brad-Williams-Dev/pokedex/blob/main/src/images/pokeball-load.png?raw=true"
+          alt="pokeball"
+          className="h-[25em] animate-spin"
+        />
       </div>
     );
   }
