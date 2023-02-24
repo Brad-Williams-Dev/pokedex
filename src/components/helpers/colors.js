@@ -14,7 +14,8 @@ const colors = {
   dragon: "rgb(115 131 185)",
   ground: "rgb(247 133 81)",
   fairy: "rgb(235 168 195)",
-  flying: ""
+  flying: "",
+  steel: "rgb(65 125 222)",
 };
 
 const badgeColors = {
@@ -35,6 +36,7 @@ const badgeColors = {
   fairy: "rgb(237 110 199)",
   flying: "rgb(116 143 201)",
   steel: "rgb(65 125 154)",
+  dark: "rgb(157 160 170)"
 };
 
 export { colors, badgeColors };

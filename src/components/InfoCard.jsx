@@ -10,7 +10,7 @@ function InfoCard({ pokemon, setShow }) {
     <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-75 z-50 flex justify-center items-center">
       <div className="flex flex-row justify-between rounded-3xl bg-white w-[40em] h-[35em]">
         <div
-          className="flex flex-col justify-around mb-5 w-[20em] h-[35em] p-10  bg-[url('https://github.com/Brad-Williams-Dev/pokedex/blob/main/src/components/images/pokeball.png?raw=true')] bg-contain bg-no-repeat bg-right"
+          className="flex flex-col justify-around mb-5 w-[20em] h-[35em] p-10  bg-[url('https://github.com/Brad-Williams-Dev/pokedex/blob/main/src/images/pokeball.png?raw=true')] bg-contain bg-no-repeat bg-right"
           style={{
             backgroundColor: colors[pokemon.types[0].type.name],
             borderTopLeftRadius: "1em",
@@ -63,14 +63,9 @@ function InfoCard({ pokemon, setShow }) {
               </h3>
             ))}
           </p>
-          <span className="w-full mb-4 text-slate-400 font-bold text-xl">
+          <span className="w-full mb-4 text-slate-400 font-bold text-xl mt-5">
             Total:{" "}
-            <span className="">
-              {pokemon.stats.reduce(
-                (total, stats) => total + stats.base_stat,
-                0
-              )}
-            </span>
+            {pokemon.stats.reduce((total, stats) => total + stats.base_stat, 0)}
           </span>
         </div>
       </div>
