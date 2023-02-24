@@ -14,7 +14,8 @@ function Header() {
       <div>
         <input
           type="text"
-          className="bg-gray-200 border border-gray-500 rounded-lg w-96 h-10 mt-[7em] mr-[7em] text-gray-700 text-lg"
+          className="bg-gray-200 border border-gray-500 rounded-lg w-[30em] h-[3em] mt-[7em] mr-[7em] text-gray-700 text-lg text-center"
+          placeholder="What Pokemon are you looking for?"
         />
       </div>
     </div>

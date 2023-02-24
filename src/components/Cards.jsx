@@ -32,17 +32,14 @@ function Cards() {
       {pokeData.map((pokemon) => (
         <div key={pokemon.id} className="py-5 m-auto w-[25em] h-[14em]">
           <div
-            className="opacity-100 max-w-md rounded-3xl shadow p-10 flex flex-row h-full"
+            className="opacity-100 max-w-md rounded-3xl shadow p-10 flex flex-row h-full bg-[url('https://github.com/Brad-Williams-Dev/pokedex/blob/main/src/components/images/pokeball.png?raw=true')] bg-contain bg-no-repeat bg-right"
             style={{
               backgroundColor: colors[pokemon.types[0].type.name],
-              backgroundImage: `url('./images/pokeball-watermark.png') !important`,
-              backgroundSize: "cover",
-              backgroundPosition: "right",
             }}
           >
             <div className="p-5">
               <div className="flex flex-col -ml-10 -mt-10 w-[10em]">
-                <h5 className="mb-0 text-2xl font-bold tracking-tight text-slate-500">
+                <h5 className="mb-0 text-2xl font-bold tracking-tight text-slate-500 ">
                   #{pokemon.id}
                 </h5>
                 <h5 className="mb-2 text-4xl font-bold tracking-tight text-[#fff]">
