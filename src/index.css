@@ -2,20 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.slide-in-enter {
-  transform: translate-x-full;
+@keyframes fill {
+  0% { width: 0%; }
+  100% { width: 100%; }
 }
 
-.slide-in-enter-active {
-  transform: translate-x-0;
-  transition: transform 1s ease-in-out;
-}
-
-.slide-in-exit {
-  transform: translate-x-0;
-}
-
-.slide-in-exit-active {
-  transform: translate-x-full;
-  transition: transform 1s ease-in-out;
+.animate-fill {
+  animation-name: fill;
+  animation-fill-mode: forwards;
 }

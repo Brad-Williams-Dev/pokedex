@@ -8,6 +8,7 @@ function Cards({ search }) {
   const [showInfoCard, setShowInfoCard] = useState(false);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedType, setSelectedType] = [""];
 
   console.log(search);
 
@@ -39,6 +40,10 @@ function Cards({ search }) {
     setSelectedPokemon(pokemon);
     setShowInfoCard(true);
   };
+
+  function handleTypeSelect(type) {
+    setSelectedType(type);
+  }
 
   function LoadingBar() {
     return (

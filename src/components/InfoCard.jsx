@@ -42,7 +42,7 @@ function InfoCard({ pokemon, setShow }) {
 
         <div className="flex flex-col items-center bg-white rounded-3xl">
           <button
-            className="fixed text-red-500 text-md -mr-[14em] mt-2"
+            className="fixed text-red-500 text-md -mr-[14em] mt-4"
             onClick={closeCard}
           >
             ❌
@@ -54,10 +54,10 @@ function InfoCard({ pokemon, setShow }) {
             {pokemon.stats.map((stats) => (
               <h3>
                 {stats.stat.name} {stats.base_stat}
-                <div className="w-full bg-gray-100 rounded-full h-1.5 mb-4 dark:bg-gray-200">
+                <div className=" bg-gray-100 rounded-full h-1.5 mb-4 dark:bg-gray-200">
                   <div
-                    className="h-1.5 rounded-full dark:bg-green-400 bg-green-400  transition-all duration-2500 ease-in-out"
-                    style={{ width: stats.base_stat }}
+                    className="h-1.5 rounded-full dark:bg-green-400 bg-green-400 "
+                    style={{ width: `${stats.base_stat}%` }}
                   ></div>
                 </div>
               </h3>
@@ -72,5 +72,4 @@ function InfoCard({ pokemon, setShow }) {
     </div>
   );
 }
-
 export default InfoCard;
