@@ -28,11 +28,11 @@ function Cards() {
   }, []);
 
   return (
-    <div className="flex flex-row flex-wrap p-20">
+    <div className="grid grid-cols-4 p-20">
       {pokeData.map((pokemon) => (
-        <div key={pokemon.id} className="p-5 w-[32em] h-[14em]">
+        <div key={pokemon.id} className="py-5 m-auto w-[25em] h-[14em]">
           <div
-            className="opacity-100 max-w-md rounded-2xl shadow p-10 flex flex-row h-full"
+            className="opacity-100 max-w-md rounded-3xl shadow p-10 flex flex-row h-full"
             style={{
               backgroundColor: colors[pokemon.types[0].type.name],
               backgroundImage: `url('./images/pokeball-watermark.png') !important`,
@@ -45,14 +45,14 @@ function Cards() {
                 <h5 className="mb-0 text-2xl font-bold tracking-tight text-slate-500">
                   #{pokemon.id}
                 </h5>
-                <h5 className="mb-2 text-5xl font-bold tracking-tight text-[#fff]">
+                <h5 className="mb-2 text-4xl font-bold tracking-tight text-[#fff]">
                   {pokemon.name.slice(0, 1).toUpperCase() +
                     pokemon.name.slice(1)}
                 </h5>
               </div>
               <div className="mt-4 -ml-10">
                 <span
-                  className="text-[#fff] text-xl mr-2 px-2.5 py-2.5 shadow-xl rounded "
+                  className="text-[#fff] text-xl mr-2 px-2.5 py-2.5 shadow-xl rounded-lg "
                   style={{
                     backgroundColor: badgeColors[pokemon.types[0].type.name],
                   }}
@@ -63,7 +63,7 @@ function Cards() {
                 {/* Checks if pokemon has a second type */}
                 {pokemon.types[1] ? (
                   <span
-                    className="text-[#fff] text-xl mr-2 py-2.5 px-2.5 shadow-xl rounded"
+                    className="text-[#fff] text-xl mr-2 py-2.5 px-2.5 shadow-xl rounded-lg"
                     style={{
                       backgroundColor: badgeColors[pokemon.types[1].type.name],
                     }}
@@ -77,7 +77,7 @@ function Cards() {
               </div>
             </div>
             <img
-              className="rounded-t-lg ml-[7em] scale-125"
+              className="rounded-t-lg ml-[4em] scale-100"
               src={pokemon.sprites.front_default}
               alt="pokemon-img"
             />

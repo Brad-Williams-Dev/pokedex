@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="flex flex-row justify-around p-10">
+    <div className="flex flex-row justify-around p-5 -mb-10">
       <div>
         <h2 className="text-6xl ml-20 mt-20 text-black-600 font-bold">
           Pokedex
