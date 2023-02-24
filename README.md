@@ -4,7 +4,7 @@ The Pokedex application is a web-based tool developed using the React framework 
 
 ## Live Link
 
-Please access the live link to view the Pokedex application in action: ![https://brad-williams-dev.github.io/pokedex/]
+Please access the live link to view the Pokedex application in action: [https://brad-williams-dev.github.io/pokedex/]
 
 ## Main page
 
