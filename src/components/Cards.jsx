@@ -53,69 +53,69 @@ function Cards({ search }) {
   }
 
   return (
-    <div className="flex flex-row flex-wrap p-20">
+    <div className="flex flex-col items-center justify-center p-6 md:p-20">
       {isLoading ? (
         <LoadingBar />
       ) : (
-        pokeData.map((pokemon) =>
-          pokemon.name.toLowerCase().includes(search) ? (
-            <div
-              key={pokemon.id}
-              className="py-5 m-auto w-[25em] h-[14em] hover:scale-105 cursor-pointer"
-              onClick={() => handleCardClick(pokemon)}
-            >
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+          {pokeData.map((pokemon) =>
+            pokemon.name.toLowerCase().includes(search) ? (
               <div
-                className="rounded-3xl shadow p-10 flex flex-row h-full bg-[url('https://github.com/Brad-Williams-Dev/pokedex/blob/main/src/images/pokeball.png?raw=true')] bg-contain bg-no-repeat bg-right"
-                style={{
-                  backgroundColor: colors[pokemon.types[0].type.name],
-                }}
+                key={pokemon.id}
+                className="py-5 m-auto w-full h-full hover:scale-105 cursor-pointer"
+                onClick={() => handleCardClick(pokemon)}
               >
-                <div className="p-5">
-                  <div className="flex flex-col -ml-10 -mt-10 w-[10em]">
-                    <h5 className="mb-0 text-2xl font-bold tracking-tight text-slate-600 ">
-                      #{pokemon.id}
-                    </h5>
-                    <h5 className="mb-2 text-4xl font-bold tracking-tight text-opal-300 capitalize">
-                      {pokemon.name}
-                    </h5>
-                  </div>
-                  <div className="mt-4 -ml-10">
-                    <span
-                      className="text-[#fff] text-xl mr-2 px-2.5 py-2.5 shadow-xl rounded-lg capitalize"
-                      style={{
-                        backgroundColor:
-                          badgeColors[pokemon.types[0].type.name],
-                      }}
-                    >
-                      {pokemon.types[0].type.name}
-                    </span>
-                    {/* Checks if pokemon has a second type */}
-                    {pokemon.types[1] ? (
+                <div
+                  className="rounded-3xl shadow p-10 flex flex-row h-full bg-[url('https://github.com/Brad-Williams-Dev/pokedex/blob/main/src/images/pokeball.png?raw=true')] bg-contain bg-no-repeat bg-right"
+                  style={{
+                    backgroundColor: colors[pokemon.types[0].type.name],
+                  }}
+                >
+                  <div className="p-5">
+                    <div className="flex flex-col -ml-10 -mt-10 w-[10em]">
+                      <h5 className="mb-0 text-2xl font-bold tracking-tight text-slate-600 ">
+                        #{pokemon.id}
+                      </h5>
+                      <h5 className="mb-2 text-4xl font-bold tracking-tight text-opal-300 capitalize">
+                        {pokemon.name}
+                      </h5>
+                    </div>
+                    <div className="mt-4 -ml-10">
                       <span
-                        className="text-[#fff] text-xl mr-2 py-2.5 px-2.5 shadow-xl rounded-lg capitalize"
+                        className="text-[#fff] text-xl mr-2 px-2.5 py-2.5 shadow-xl rounded-lg capitalize"
                         style={{
                           backgroundColor:
-                            badgeColors[pokemon.types[1].type.name],
+                            badgeColors[pokemon.types[0].type.name],
                         }}
                       >
-                        {pokemon.types[1].type.name}
+                        {pokemon.types[0].type.name}
                       </span>
-                    ) : (
-                      <p></p>
-                    )}
+                      {/* Checks if pokemon has a second type */}
+                      {pokemon.types[1] ? (
+                        <span
+                          className="text-[#fff] text-xl mr-2 py-2.5 px-2.5 shadow-xl rounded-lg capitalize"
+                          style={{
+                            backgroundColor:
+                              badgeColors[pokemon.types[1].type.name],
+                          }}
+                        >
+                          {pokemon.types[1].type.name}
+                        </span>
+                      ) : (
+                        <p></p>
+                      )}
+                    </div>
                   </div>
+                  <img
+                    className="rounded-t-lg ml-[4em] scale-125 sm:ml-6 sm:rounded-none sm:rounded-r-lg"
+                    src={pokemon.sprites.front_default}
+                    alt="pokemon-img"
+                  />
                 </div>
-                <img
-                  className="rounded-t-lg ml-[4em] scale-125"
-                  src={pokemon.sprites.front_default}
-                  alt="pokemon-img"
-                />
               </div>
-            </div>
-          ) : (
-            <p key={pokemon.id}></p>
-          )
-        )
+            ) : null
+          )}
+        </div>
       )}
       {showInfoCard && (
         <InfoCard pokemon={selectedPokemon} setShow={setShowInfoCard} />
