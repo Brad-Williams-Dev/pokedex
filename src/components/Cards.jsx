@@ -85,7 +85,7 @@ function Cards({ search }) {
                         {pokemon.name}
                       </h5>
                     </div>
-                    <div className="mt-4 -ml-10">
+                    <div className="mt-[6em] -ml-10 ">
                       <span
                         className="text-[#fff] text-xl mr-2 px-2.5 py-2.5 shadow-xl rounded-lg capitalize"
                         style={{
@@ -112,8 +112,8 @@ function Cards({ search }) {
                     </div>
                   </div>
                   <img
-                    className="rounded-t-lg ml-[4em] scale-125 sm:ml-6 sm:rounded-none sm:rounded-r-lg"
-                    src={pokemon.sprites.front_default}
+                    className="rounded-t-lg -mr-[2em] mb-4 h-[11em] sm:ml-6 sm:rounded-none sm:rounded-r-lg"
+                    src={pokemon.sprites.other.home.front_default}
                     alt="pokemon-img"
                   />
                 </div>

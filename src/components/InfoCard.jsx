@@ -1,7 +1,8 @@
 import React from "react";
 import { colors, badgeColors } from "./helpers/colors";
+import "../index.css";
 
-function InfoCard({ pokemon, setShow }) {
+function InfoCard({ pokemon, setShow, base_stat }) {
   function closeCard() {
     setShow(false);
   }
@@ -17,12 +18,12 @@ function InfoCard({ pokemon, setShow }) {
             borderBottomLeftRadius: "1em",
           }}
         >
-          <h2 className="text-5xl capitalize text-center text-white mt-10">
+          <h2 className="text-5xl capitalize text-center text-white mt-15">
             {pokemon.name}
           </h2>
           <img
-            className="w-30 h-40 mt-10 m-auto"
-            src={pokemon.sprites.front_default}
+            className="w-30 h-40 mb-[6em] m-auto"
+            src={pokemon.sprites.other.dream_world.front_default}
             alt={pokemon.name}
           />
           <p className="text-center -mt-20">
@@ -47,22 +48,27 @@ function InfoCard({ pokemon, setShow }) {
           >
             ❌
           </button>
-          <p className="text-2xl font-bold text-green-500 mr-[7em] mt-[2em]">
-            Base Stats
-          </p>
           <p className="text-lg text-slate-400 mr-[7em] mt-[2em] capitalize">
+            <h2 className="text-2xl pb-6 font-bold text-green-500">
+              Base Stats
+            </h2>
             {pokemon.stats.map((stats) => (
               <h3>
                 {stats.stat.name} {stats.base_stat}
-                <div className=" bg-gray-100 rounded-full h-1.5 mb-4 dark:bg-gray-200">
+                <div className="bg-gray-100 rounded-full h-1.5 mb-4 dark:bg-gray-200">
                   <div
-                    className="h-1.5 rounded-full dark:bg-green-400 bg-green-400 "
-                    style={{ width: `${stats.base_stat}%` }}
+                    className="h-1.5 rounded-full dark:bg-green-500 bg-green-400 progress-bar__fill"
+                    style={{
+                      width: `${stats.base_stat}%`,
+                      clipPath: `inset(0 ${100 - stats.base_stat}% 0 0)`,
+                      animation: "fill-bar 2.5s ease-in-out forwards",
+                    }}
                   ></div>
                 </div>
               </h3>
             ))}
           </p>
+
           <span className="w-full mb-4 text-slate-400 font-bold text-xl mt-5">
             Total:{" "}
             {pokemon.stats.reduce((total, stats) => total + stats.base_stat, 0)}

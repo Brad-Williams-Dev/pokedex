@@ -2,12 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fill {
-  0% { width: 0%; }
-  100% { width: 100%; }
+.bg-gray-100 {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  padding: 8px;
+  background-color: #ccc;
+  border-radius: 0.75rem;
 }
 
-.animate-fill {
-  animation-name: fill;
-  animation-fill-mode: forwards;
+.progress-bar__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #6abf69;
+  border-radius: 0.75rem;
+  animation: fill-bar 2.5s ease-in-out forwards;
+}
+
+@keyframes fill-bar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
