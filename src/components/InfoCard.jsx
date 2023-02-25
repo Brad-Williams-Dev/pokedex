@@ -3,9 +3,9 @@ import { colors, badgeColors } from "./helpers/colors";
 import "../index.css";
 
 function InfoCard({ pokemon, setShow, base_stat }) {
-  function closeCard() {
+  const closeCard = () => {
     setShow(false);
-  }
+  };
 
   return (
     <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-75 z-50 flex justify-center items-center">

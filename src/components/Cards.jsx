@@ -10,8 +10,6 @@ function Cards({ search }) {
   const [isLoading, setIsLoading] = useState(false);
   const [selectedType, setSelectedType] = [""];
 
-  console.log(search);
-
   useEffect(() => {
     axios
       .get("https://pokeapi.co/api/v2/pokemon?limit=1008")
@@ -62,7 +60,7 @@ function Cards({ search }) {
       {isLoading ? (
         <LoadingBar />
       ) : (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {pokeData.map((pokemon) =>
             pokemon.name.toLowerCase().includes(search) ? (
               <div
