@@ -61,7 +61,7 @@ function Cards({ search }) {
       {isLoading ? (
         <LoadingBar />
       ) : (
-        <div className="grid grid-cols-1 w-auto gap-6 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 w-auto gap-6 xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-col-4">
           {pokeData.map((pokemon) =>
             pokemon.name.toLowerCase().includes(search) ? (
               <div
