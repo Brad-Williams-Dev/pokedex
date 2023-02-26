@@ -13,7 +13,7 @@ function Cards({ search }) {
 
   useEffect(() => {
     axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=1008")
+      .get("https://pokeapi.co/api/v2/pokemon?limit=905")
       .then(function (response) {
         // handle success
         setIsLoading(true);

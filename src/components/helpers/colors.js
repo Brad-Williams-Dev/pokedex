@@ -14,8 +14,9 @@ const colors = {
   dragon: "rgb(115 131 185)",
   ground: "rgb(247 133 81)",
   fairy: "rgb(235 168 195)",
-  flying: "",
+  flying: "rgb(116 143 210)",
   steel: "rgb(65 125 222)",
+
 };
 
 const badgeColors = {
