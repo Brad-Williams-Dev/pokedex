@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { colors, badgeColors } from "./helpers/colors";
 import axios from "axios";
 import InfoCard from "./InfoCard";
+import "../index.css";
 
 function Cards({ search }) {
   const [pokeData, setPokeData] = useState([]);
@@ -121,7 +122,9 @@ function Cards({ search }) {
         </div>
       )}
       {showInfoCard && (
-        <InfoCard pokemon={selectedPokemon} setShow={setShowInfoCard} />
+        <div className="info-card-wrapper">
+          <InfoCard pokemon={selectedPokemon} setShow={setShowInfoCard} />
+        </div>
       )}
     </div>
   );

@@ -61,7 +61,7 @@ function InfoCard({ pokemon, setShow, base_stat }) {
                     style={{
                       width: `${stats.base_stat}%`,
                       clipPath: `inset(0 ${100 - stats.base_stat}% 0 0)`,
-                      animation: "fill-bar 2.5s ease-in-out forwards",
+                      animation: "fill-bar 1.25s ease-in-out forwards",
                     }}
                   ></div>
                 </div>
