@@ -57,11 +57,11 @@ function Cards({ search }) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 md:p-20">
+    <div className="flex flex-col items-center p-6 md:p-20">
       {isLoading ? (
         <LoadingBar />
       ) : (
-        <div className="grid grid-cols-1 gap-6 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 w-auto gap-6 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {pokeData.map((pokemon) =>
             pokemon.name.toLowerCase().includes(search) ? (
               <div
@@ -75,7 +75,7 @@ function Cards({ search }) {
                     backgroundColor: colors[pokemon.types[0].type.name],
                   }}
                 >
-                  <div className="p-5">
+                  <div className="p-5 flex-grow">
                     <div className="flex flex-col -ml-10 -mt-10 w-[10em]">
                       <h5 className="mb-0 text-2xl font-bold tracking-tight text-slate-600 ">
                         #{pokemon.id}
@@ -110,11 +110,13 @@ function Cards({ search }) {
                       )}
                     </div>
                   </div>
-                  <img
-                    className="rounded-t-lg -mr-[2em] mb-4 h-[11em] sm:ml-6 sm:rounded-none sm:rounded-r-lg"
-                    src={pokemon.sprites.other.home.front_default}
-                    alt="pokemon-img"
-                  />
+                  <div className="flex-shrink-0">
+                    <img
+                      className="rounded-t-lg mb-4 h-48 w-48 pr-10"
+                      src={pokemon.sprites.other.home.front_default}
+                      alt="pokemon-img"
+                    />
+                  </div>
                 </div>
               </div>
             ) : null
