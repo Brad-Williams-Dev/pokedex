@@ -2,19 +2,20 @@ import React, { useState } from "react";
 
 function Header({ onSearchChange }) {
   return (
-    <div className="flex flex-row justify-around p-5 -mb-10">
+    <div class="flex flex-col md:flex-row md:justify-between p-5 -mb-10">
       <div>
-        <h2 className="text-6xl ml-20 mt-20 text-black-600 font-bold">
+        <h2 class="text-2xl md:text-6xl ml-5 md:ml-20 mt-5 md:mt-20 text-black-600 font-bold">
           Pokedex
         </h2>
-        <p className="mt-5 ml-20 text-slate-500">Search for Pokemon by name!</p>
+        <p class="mt-3 md:mt-5 ml-5 md:ml-20 text-slate-500">
+          Search for Pokemon by name!
+        </p>
       </div>
-      <div className="mt-[7em] mr-[7em]">
+      <div class="mt-5 md:mt-[7em] mx-5 md:mr-[7em]">
         <input
           type="text"
-          className="bg-gray-200 border border-gray-500 rounded-lg w-[30em] h-[3em]  text-gray-700 text-lg text-center"
+          class="bg-gray-200 border border-gray-500 rounded-lg w-full md:w-[30em] h-10 md:h-[3em] text-gray-700 text-lg text-center"
           placeholder="What Pokemon are you looking for?"
-          // value={search}
           onChange={onSearchChange}
         />
       </div>
