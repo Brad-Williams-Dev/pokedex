@@ -8,7 +8,7 @@ function InfoCard({ pokemon, setShow, base_stat }) {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-75 z-50 flex justify-center items-center overflow-y-auto  ">
+    <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-75 z-50 flex justify-center items-center xxs:h-[100vh] xxs:w-[100vw] overflow-y-auto  ">
       <div className="flex flex-col bg-white rounded-3xl w-full h-full md:flex-row md:justify-between md:w-[40em] md:h-[35em] ">
         <div
           className="flex flex-col justify-around p-10 bg-[url('https://github.com/Brad-Williams-Dev/pokedex/blob/main/src/images/pokeball.png?raw=true')] bg-contain bg-no-repeat bg-right md:w-[20em] md:h-full"

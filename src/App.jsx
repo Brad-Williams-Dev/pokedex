@@ -7,7 +7,7 @@ function App() {
   const [search, setSearch] = useState("");
 
   const handleSearchChange = (event) => {
-    setSearch(event.target.value);
+    setSearch(event.target.value.toLowerCase());
   };
 
   return (

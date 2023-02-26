@@ -63,7 +63,7 @@ function Cards({ search }) {
       ) : (
         <div className="grid grid-cols-1 w-auto gap-6 xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-col-4">
           {pokeData.map((pokemon) =>
-            pokemon.name.toLowerCase().includes(search) ? (
+            pokemon.name.includes(search) ? (
               <div
                 key={pokemon.id}
                 className="py-5 m-auto w-full h-full hover:scale-105 cursor-pointer"
